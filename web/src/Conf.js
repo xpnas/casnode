@@ -14,10 +14,10 @@
 
 export const AuthConfig = {
   // serverUrl: "https://door.casbin.com",
-  serverUrl: "http://localhost:7001",
-  clientId: "014ae4bd048734ca2dea",
-  organizationName: "casbin",
-  appName: "app-casnode",
+  serverUrl: "https://door.krun8.com",
+  clientId: "d5e3f212ec87ba9aa45b",
+  organizationName: "krun8",
+  appName: "app-krun8",
   redirectPath: "/callback",
 };
 
