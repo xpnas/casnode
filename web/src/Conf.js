@@ -35,7 +35,7 @@ export const FrontConfig = {
 export const ShowEmbedButtons = false;
 
 export const ShowGithubCorner = false;
-export const GithubRepo = "https://github.com/casbin/casnode";
+export const GithubRepo = "https://github.com/xpans/casnode";
 
 export const Domain = "www.krun8.com";
 
