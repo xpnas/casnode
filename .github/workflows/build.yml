@@ -50,7 +50,7 @@ jobs:
   release-and-push:
     name: Release And Push
     runs-on: ubuntu-latest
-    if: github.repository == 'casbin/casnode' && github.event_name == 'push'
+    if: github.repository == 'xpnas/casnode' && github.event_name == 'push'
     needs: [ frontend, backend, linter ]
     steps:
       - name: Checkout
@@ -98,14 +98,14 @@ jobs:
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
-        if: github.repository == 'casbin/casnode' && github.event_name == 'push' &&steps.should_push.outputs.push=='true'
+        if: github.repository == 'xpnas/casnode' && github.event_name == 'push' &&steps.should_push.outputs.push=='true'
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
-        if: github.repository == 'casbin/casnode' && github.event_name == 'push' && steps.should_push.outputs.push=='true'
+        if: github.repository == 'xpnas/casnode' && github.event_name == 'push' && steps.should_push.outputs.push=='true'
         with:
           push: true
-          tags: casbin/casnode:${{steps.get-current-tag.outputs.tag }},casbin/casnode:latest
+          tags: xpnas/casnode:${{steps.get-current-tag.outputs.tag }},xpnas/casnode:latest

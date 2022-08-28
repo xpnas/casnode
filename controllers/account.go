@@ -16,6 +16,7 @@ package controllers
 
 import (
 	_ "embed"
+	"io/ioutil"
 	"strings"
 
 	"github.com/astaxie/beego"
@@ -38,7 +39,11 @@ func InitAuthConfig() {
 	casdoorOrganization := beego.AppConfig.String("casdoorOrganization")
 	casdoorApplication := beego.AppConfig.String("casdoorApplication")
 
-	auth.InitConfig(casdoorEndpoint, clientId, clientSecret, JwtPublicKey, casdoorOrganization, casdoorApplication)
+	content, err := ioutil.ReadFile("../conf/token_jwt_key.pem")
+	if err != nil {
+		panic(err)
+	}
+	auth.InitConfig(casdoorEndpoint, clientId, clientSecret, string(content), casdoorOrganization, casdoorApplication)
 }
 
 // @Title Signin
