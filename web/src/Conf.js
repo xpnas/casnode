@@ -37,7 +37,7 @@ export const ShowEmbedButtons = false;
 export const ShowGithubCorner = false;
 export const GithubRepo = "https://github.com/casbin/casnode";
 
-export const Domain = "forum.casbin.com";
+export const Domain = "www.krun8.com";
 
 export const ForceLanguage = "";
 export const DefaultLanguage = "en";
